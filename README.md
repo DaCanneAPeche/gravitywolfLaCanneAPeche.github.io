@@ -1,4 +1,4 @@
 # gravitywolfLaCanneAPeche.github.io
-A little web site for train front-end
+My participation to the web fun code tournament
 
-HI !
+the `.old` file is the former web site who was on this repo, ignore it
