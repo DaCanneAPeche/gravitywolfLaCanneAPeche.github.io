@@ -1,5 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root {
+  --bg: #1A1826;
+  --fg: #D9E0EE;
+  --nbg: #1E1E2E;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 *, ::after, ::before {
   padding: 0;
   margin: 0;
   box-sizing: content-box;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  list-style: none;
+}
+
+a {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.title h1 {
+  width: 24vw;
+  /* border: red solid 1px; */
+  margin-top: 1vh;
+  margin-left: 5vw;
+  font-size: 3em;
+}
+
+header {
+  background: var(--nbg);
+  height: 18vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 100px black;
+}
+
+.nav {
+  /* border: blue solid 1px; */
+  flex: 0.8;
+  height: 100%;
+  font-size: 2em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav li::after {
+  content: "";
+  width: 100%;
+  transform: scaleX(0);
+  height: 0.2vh;
+  background: var(--fg);
+  display: block;
+  margin-top: 0.4vh;
+  transition: 0.3s transform;
+  transform-origin: right;
+}
+
+.nav li:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+section {
+  margin-top: 10vh;
+  position: relative;
+}
+
+section h2 {
+  position: absolute;
+  top: -7vh;
+  font-size: 2vw;
+  left: 1vw;
+}
+
+#who {
+  display: flex;
+  height:60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+#who .img {
+  width: 65vw;
+  height: 100%;
+  background: url("../img/nibble.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  position: absolute;
+  z-index: -1;
+}
+
+#who p {
+  width: 55vw;
+  font-size: 1.8vw;
+  line-height: 6vh;
+  position: absolute;
+  right: 0;
+}
+
+#team {
+  height: 50vh;
+  /* border: green 1px solid; */
+}
+
+#team .cards {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#team .card {
+  height: 90%;
+  flex: 1;
+  margin: 0 1%;
+  color: var(--bg);
+  box-shadow: 0 0 1.5vw black;
+  transition: 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: contain;
+  position: relative;
+}
+
+#team .card .img {
+  filter: blur(0.3vw);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+#team .card:hover {
+  height: 100%;
+  flex: 1.5;
+}
+
+#team .card:hover .img {
+  filter: none;
+}
+
+#team .card:hover p {
+  opacity: 0;
+}
+
+#team .card p {
+  font-size: 2vw;
+}
+
+#team .cards > :nth-child(1) .img {
+  background: url("../img/1.jpeg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#team .cards > :nth-child(2) .img {
+  background: url("../img/2.jpeg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#team .cards > :nth-child(3) .img {
+  background: url("../img/3.jpeg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#team .cards > :nth-child(4) .img {
+  background: url("../img/4.jpeg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#stats div {
+  font-size: 1.5vw;
+  margin-left: 1vw;
+}
+
+#stats .bar {
+  position: relative;
+  flex: 1;
+}
+
+#stats .bar::after, #stats .bar::before {
+  content: "";
+  display: block;
+  height: 1vh;
+  position: absolute;
+  top: 50%;
+  left: 7vw;
+  transform: translateY(-50%);
+}
+
+#stats .bar span {
+  color: #FAE3B0;
+}
+
+#stats .bar::after {
+  background-color: var(--nbg);
+  z-index: -1;
+  width: 80%;
+}
+#stats .bar::before {
+  background: #FAE3B0;
+  background: linear-gradient(90deg, #FAE3B0 0%, #ABE9B3 100%);
+  width: 73.6%;
+}
+
+#stats .selled span {
+  color: #DDB6F2;
+}
+
+#contact {
+  height: 50vh;
+  background: var(--nbg);
+  box-shadow: 0 0 100px black;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#contact > * {
+  height: 90%;
+  margin: 0 2vw;
+}
+
+#contact input {
+  background: var(--bg);
+  border: none;
+  color: var(--fg);
+}
+
+#contact > input {
+  flex: 2;
+  font-size: 1.2vw;
+}
+
+#contact div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#contact div input {
+  height: 10%;
+  font-size: 1.3vw;
+}
+
+#contact div button {
+  height: 40%;
+  font-size: 3vw;
+  background: #F8BD96;
+  border: none;
+  transition: 0.3s background ease;
+}
+
+#contact div button:active {
+  background-color: #F28FAD;
+}
+
+.notif {
+  position: fixed;
+  bottom: -30vh;
+  right: 6vw;
+  background: #B5E8E0;
+  color: var(--nbg);
+  height: 20vh;
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5vw;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+}
+
+.notif.failed {
+  background: #F2CDCD;
+}
+
+.notif.failed::after {
+  background: #F28FAD;
+}
+
+.notif::after {
+  content: "";
+  position: absolute;
+  height: 120%;
+  width: 3vw;
+  background: #ABE9B3;
+  left: 30vw;
+  border-radius: 5px;
+}
+
+.notif.visible {
+  bottom: 5vh;
 }

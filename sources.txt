@@ -1,0 +1,7 @@
+color palette : https://github.com/catppuccin/catppuccin
+persons : https://thispersondoesnotexist.com/
+
+https://stackoverflow.com/questions/4847850/is-it-possible-to-define-constants-in-css
+https://css-tricks.com/snippets/css/complete-guide-grid/
+inspired by https://circuitmess.com/products/nibble-diy-game-console?_pos=1&_psq=ni&_ss=e&_v=1.0
+console's photo : https://circuitmess.com/products/nibble-diy-game-console?_pos=1&_psq=ni&_ss=e&_v=1.0
